@@ -1,6 +1,7 @@
-class CreateLaptopSpecs < ActiveRecord::Migration
+class CreateSpecs < ActiveRecord::Migration
   def change
-    create_table :laptop_specs do |t|
+    create_table :specs do |t|
+      
       t.string :brand
       t.string :name
       t.integer :price
@@ -14,6 +15,7 @@ class CreateLaptopSpecs < ActiveRecord::Migration
       t.integer :battery
       t.float :monitor
       t.float :weight
+      
       t.timestamps null: false
     end
   end

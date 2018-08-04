@@ -1,2 +1,17 @@
-<h1>Home#develop</h1>
-<p>Find me in app/views/home/develop.html.erb</p>
+
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <form action="/home/storage" method="get">
+                <br><br>
+                <h1>Home#develop</h1>
+                <fieldset>
+                    <h3>어떤 개발해?</h3>
+                        <input type="radio" name="develop" value="Ordinary">일반
+                        <input type="radio" name="develop" value="MachineLearning">머신러닝
+                    <button type="submit">다음</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>

@@ -1,2 +1,22 @@
-<h1>Home#program</h1>
-<p>Find me in app/views/home/program.html.erb</p>
+
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <form action="/home/game" method="get">
+                <fieldset>
+                    <br><br>
+                    <h1>Home#program</h1>
+
+                    <h3>어떤 프로그램 써?</h3>
+                    <input type="radio" name="program" value="Document">문서작업
+                    <input type="radio" name="program" value="Game">게임
+                    <input type="radio" name="program" value="Graphic">그래픽작업
+                    <input type="radio" name="program" value="Develop">개발자
+                    <button type="submit">다음</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>
+
+

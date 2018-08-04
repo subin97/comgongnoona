@@ -1,2 +1,17 @@
-<h1>Home#weight</h1>
-<p>Find me in app/views/home/weight.html.erb</p>
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <form action="/home/brand" method="get">
+                <br><br>
+                <h1>Home#weight</h1>
+                <fieldset>
+                    <h3>어깨는 튼튼해?</h3>
+        <input type="radio" name="weight" value="weight_low">~1Kg
+        <input type="radio" name="weight" value="weight_middle">1~2Kg
+        <input type="radio" name="weight" value="weight_high">2Kg~
+                    <button type="submit">다음</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>

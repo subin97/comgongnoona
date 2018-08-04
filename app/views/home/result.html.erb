@@ -1,2 +1,62 @@
-<h1>Home#result</h1>
-<p>Find me in app/views/home/result.html.erb</p>
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <fieldset>
+            <br><br>
+            <h1>Home#result</h1>
+            <h3>이제부턴 개취야.</h3>
+            
+            <p> program: <%=$program%> </p>
+            <p> game: <%=$game%> </p>
+            <p> graphic: <%=$graphic%> </p>
+            <p> develop: <%=$develop%> </p>
+            <p> storage: <%=$storage%> </p>
+            <p> battery: <%=$battery%> </p>
+            <p> display: <%=$display%> </p>
+            <p> weight: <%=$weight%> </p>
+            <p> brand: <%=$brand%> </p>
+            <table>
+              <td>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">브랜드</th>
+                  <th scope="col">모델명</th>
+                  <th scope="col">가격</th>
+                  <th scope="col">CPU이름</th>
+                  <th scope="col">CPU점수</th>
+                  <th scope="col">GPU이름</th>
+                  <th scope="col">CPU점수</th>
+                  <th scope="col">RAM</th>
+                  <th scope="col">HDD</th>
+                  <th scope="col">SSD</th>
+                  <th scope="col">배터리</th>
+                  <th scope="col">화면크기</th>
+                  <th scope="col">무게</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= $result.empty? %>
+                  <% $result.each do |d| %>
+                    <tr>
+                      <th scope="row"><%= d.id %></th>
+                      <td><%= d.brand %></td>
+                      <td><%= d. name%></td>
+                      <td><%= d. price%></td>
+                      <td><%= d. cpu%></td>
+                      <td><%= d. cpuscore%></td>
+                      <td><%= d. gpu%></td>
+                      <td><%= d. gpuscore%></td>
+                      <td><%= d. ram%></td>
+                      <td><%= d. hdd%></td>
+                      <td><%= d. ssd%></td>
+                      <td><%= d. battery%></td>
+                      <td><%= d. monitor%></td>
+                      <td><%= d. weight%></td>
+                    </tr>
+                  <% end %>    
+              </tbody>
+            </table>
+            </fieldset>
+        </div>
+    </div>
+</header>

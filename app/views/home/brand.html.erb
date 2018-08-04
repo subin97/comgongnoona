@@ -1,2 +1,18 @@
-<h1>Home#brand</h1>
-<p>Find me in app/views/home/brand.html.erb</p>
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <form action="/home/result" method="get">
+                <br><br>
+                <h1>Home#brand</h1>
+                <fieldset>
+                    <h3>브랜드 따로 원하는거 있어?</h3>
+                        <input type="radio" name="brand" value="samsung">삼성
+                        <input type="radio" name="brand" value="LG">LG
+                        <input type="radio" name="brand" value="etc">Lenova/ASUS/HP/한성/etc.
+                        <input type="radio" name="brand" value="dontcare">상관ㄴㄴ
+                    <button type="submit">다음</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>

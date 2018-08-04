@@ -1,2 +1,19 @@
-<h1>Home#battery</h1>
-<p>Find me in app/views/home/battery.html.erb</p>
+
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <form action="/home/display" method="get">
+                <br><br>
+                <h1>Home#battery</h1>
+                <fieldset>
+                    <h3>배터리는 얼마나 필요해?</h3>
+                        <input type="radio" name="battery" value="battery_1">~5시간
+                        <input type="radio" name="battery" value="battery_2">~10시간
+                        <input type="radio" name="battery" value="battery_3">~24시간
+                        <input type="radio" name="battery" value="battery_4">24시간~
+                    <button type="submit">다음</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>
