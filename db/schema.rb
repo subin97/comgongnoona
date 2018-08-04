@@ -13,24 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20180731161208) do
 
-  create_table "laptop_specs", force: :cascade do |t|
-    t.string   "brand"
-    t.string   "name"
-    t.integer  "price"
-    t.string   "cpu"
-    t.integer  "cpuscore"
-    t.string   "gpu"
-    t.integer  "gpuscore"
-    t.integer  "ram"
-    t.integer  "hdd"
-    t.integer  "ssd"
-    t.integer  "battery"
-    t.float    "monitor"
-    t.float    "weight"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "specs", force: :cascade do |t|
     t.string   "brand"
     t.string   "name"
@@ -43,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180731161208) do
     t.integer  "hdd"
     t.integer  "ssd"
     t.integer  "battery"
-    t.float    "monitor"
+    t.float    "display"
     t.float    "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

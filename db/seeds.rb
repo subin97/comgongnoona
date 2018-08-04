@@ -12,7 +12,7 @@ Spec.create(
     hdd: i*100, 
     ssd: i*100, 
     battery: i, 
-    monitor: 13+(i/4)*2, 
+    display: 13+(i/4)*2, 
     weight: i 
     )
 

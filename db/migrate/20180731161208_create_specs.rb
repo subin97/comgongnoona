@@ -13,7 +13,7 @@ class CreateSpecs < ActiveRecord::Migration
       t.integer :hdd
       t.integer :ssd
       t.integer :battery
-      t.float :monitor
+      t.float :display
       t.float :weight
       
       t.timestamps null: false

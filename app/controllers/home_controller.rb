@@ -102,11 +102,11 @@ class HomeController < ApplicationController
       $display = params[:display]
     
     if $display == '13inch'
-      $result_display = $result_battery.where("monitor >= 13 AND monitor < 15")
+      $result_display = $result_battery.where("display >= 13 AND display < 15")
     elsif $display == '15inch'
-      $result_display = $result_battery.where("monitor >= 15 AND monitor < 17")
+      $result_display = $result_battery.where("display >= 15 AND display < 17")
     elsif $display == '17inch'
-      $result_display = $result_battery.where("monitor >= 17")
+      $result_display = $result_battery.where("display >= 17")
     end
     
     $result = $result_display
