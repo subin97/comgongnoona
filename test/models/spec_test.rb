@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LaptopSpecTest < ActiveSupport::TestCase
+class SpecTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

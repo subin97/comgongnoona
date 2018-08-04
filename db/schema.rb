@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180728075053) do
+ActiveRecord::Schema.define(version: 20180803135319) do
 
-  create_table "laptop_specs", force: :cascade do |t|
+  create_table "specs", force: :cascade do |t|
     t.string   "brand"
-    t.string   "model_name"
+    t.string   "name"
     t.integer  "price"
     t.string   "cpu"
-    t.integer  "cpu_score"
+    t.integer  "cpuscore"
     t.string   "gpu"
-    t.integer  "gpu_score"
+    t.integer  "gpuscore"
     t.integer  "ram"
     t.integer  "hdd"
     t.integer  "ssd"
