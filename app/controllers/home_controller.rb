@@ -3,20 +3,10 @@ class HomeController < ApplicationController
   end
  
   def program
-    @test = 1
   end
-  def word
-
-    # view 없음, 액션만 존재
-    @word = Spec.new
-    Spec.where()
-    # db 저장 후 redirect
-    redirect_to '/home/storage'
-  end
+ 
   def game
-<<<<<<< HEAD
-    
-=======
+
     $program = params[:program]
     
     if params[:program] == 'Document'
@@ -26,7 +16,7 @@ class HomeController < ApplicationController
     elsif params[:program] == 'Develop'
       redirect_to '/home/develop'
     end
->>>>>>> 5f7f81eae33195d4778ef07e1495939c86a7cfba
+
   end
 
   
@@ -167,4 +157,5 @@ class HomeController < ApplicationController
   
   def back
   end
+  
 end
