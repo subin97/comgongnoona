@@ -1,2 +1,17 @@
-<h1>Home#display</h1>
-<p>Find me in app/views/home/display.html.erb</p>
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <form action="/home/weight" method="get">
+                <br><br>
+                <h1>Home#display</h1>
+                <fieldset>
+                    <h3>화면크기는 얼마가 좋아?</h3>
+                        <input type="radio" name="display" value="13inch">13인치
+                        <input type="radio" name="display" value="15inch">15인치
+                        <input type="radio" name="display" value="17inch">17인치
+                    <button type="submit">다음</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>

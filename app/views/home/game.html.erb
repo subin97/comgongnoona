@@ -1,2 +1,20 @@
-<h1>Home#game</h1>
-<p>Find me in app/views/home/game.html.erb</p>
+
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <form action="/home/storage" method="get">
+                <br><br>
+                <h1>Home#game</h1>
+                <fieldset>
+                    <h3>어떤 게임해?</h3>
+                    <input type="radio" name="game" value="Maplestory">메이플스토리
+                    <input type="radio" name="game" value="LOL">리그 오브 레전드
+                    <input type="radio" name="game" value="Overwatch">오버워치
+                    <input type="radio" name="game" value="PUBG">배틀 그라운드
+                    <button type="submit">다음</button>
+                    
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>

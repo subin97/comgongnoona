@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180803135319) do
+ActiveRecord::Schema.define(version: 20180731161208) do
 
   create_table "specs", force: :cascade do |t|
     t.string   "brand"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180803135319) do
     t.integer  "hdd"
     t.integer  "ssd"
     t.integer  "battery"
-    t.float    "monitor"
+    t.float    "display"
     t.float    "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

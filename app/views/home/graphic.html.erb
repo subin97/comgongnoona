@@ -1,2 +1,19 @@
-<h1>Home#graphic</h1>
-<p>Find me in app/views/home/graphic.html.erb</p>
+
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <form action="/home/storage" method="get">
+                <br><br>
+                <h1>Home#graphic</h1>
+                <fieldset>
+                    <h3>어떤 그래픽작업해?</h3>
+                        <input type="radio" name="graphic" value="Photo">포토샵/일러스트
+                        <input type="radio" name="graphic" value="Video">프리미어/에프터이펙트
+                        <input type="radio" name="graphic" value="3ds">3ds Max
+                        <input type="radio" name="graphic" value="CAD">AutoCAD
+                    <button type="submit">다음</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>

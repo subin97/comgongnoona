@@ -1,2 +1,21 @@
-<h1>Home#storage</h1>
-<p>Find me in app/views/home/storage.html.erb</p>
+
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <form action="/home/battery" method="get">
+                <br><br>
+                <h1>Home#storage</h1>
+                <fieldset>
+                    <h3>용량 얼마나 필요해?</h3>
+                        <input type="radio" name="storage" value="128GB">128GB
+                        <input type="radio" name="storage" value="256GB">256GB
+                        <input type="radio" name="storage" value="512GB">512GB
+                        <input type="radio" name="storage" value="1TB">1TB
+                    <button type="submit">다음</button>
+                    
+                    
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>
