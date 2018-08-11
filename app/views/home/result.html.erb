@@ -25,7 +25,7 @@
                   <th scope="col">CPU이름</th>
                   <th scope="col">CPU점수</th>
                   <th scope="col">GPU이름</th>
-                  <th scope="col">CPU점수</th>
+                  <th scope="col">GPU점수</th>
                   <th scope="col">RAM</th>
                   <th scope="col">HDD</th>
                   <th scope="col">SSD</th>
@@ -50,8 +50,10 @@
                       <td><%= d. hdd%></td>
                       <td><%= d. ssd%></td>
                       <td><%= d. battery%></td>
-                      <td><%= d. monitor%></td>
+                      <td><%= d. display%></td>
                       <td><%= d. weight%></td>
+                      <td><a href="https://www.youtube.com/results?search_query=<%= d.name %>"><button>유튜브 검색</button></a></td>
+                      <td><a href="http://search.danawa.com/dsearch.php?k1=<%= d.name %>&module=goods&act=dispMain"><button>다나와 검색</button></a></td>
                     </tr>
                   <% end %>    
               </tbody>

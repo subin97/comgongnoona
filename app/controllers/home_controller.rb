@@ -1,6 +1,29 @@
 class HomeController < ApplicationController
   def index
   end
+  
+  def upload
+    a = Roo::Excelx.new(Rails.root.join('app', 'assets', 'LaptopDB.xlsx'))
+    a.default_sheet = a.sheets.first
+    for i in 2..140
+        Spec.create!(
+            brand: a.cell(i,'A'), 
+            name: a.cell(i,'B'), 
+            price: a.cell(i,'C'), 
+            cpu: a.cell(i,'D'), 
+            cpuscore: a.cell(i,'E'), 
+            gpu: a.cell(i,'F'), 
+            gpuscore: a.cell(i,'H'), 
+            ram: a.cell(i,'I'), 
+            hdd: a.cell(i,'J'), 
+            ssd: a.cell(i,'K'), 
+            battery: a.cell(i,'L'), 
+            display: a.cell(i,'M'), 
+            weight: a.cell(i,'N')
+            )
+    end
+    redirect_to '/'
+  end
 
   def program
   end
@@ -32,30 +55,30 @@ class HomeController < ApplicationController
     
 
     if $program == 'Document'
-      $result_program = Spec.where("cpuscore >= 100000")
+      $result_program = Spec.where("cpuscore <= 4000")
       
     elsif $game == 'Maplestory'
-      $result_program = Spec.where("cpuscore >= 200000")
+      $result_program = Spec.where("cpuscore > 4000 AND cpuscore <=6000")
     elsif  $game == 'LOL'
-      $result_program = Spec.where("cpuscore >= 500000")
+      $result_program = Spec.where("cpuscore > 6000 AND cpuscore <=8000")
     elsif $game == 'Overwatch'
-      $result_program = Spec.where("cpuscore >= 700000")
+      $result_program = Spec.where("cpuscore > 8000 AND cpuscore <= 10000")
     elsif $game == 'PUBG'
-      $result_program = Spec.where("cpuscore >= 900000")
+      $result_program = Spec.where("cpuscore > 10000")
     
     elsif $graphic == 'Photo'
-      $result_program = Spec.where("cpuscore >= 400000")
+      $result_program = Spec.where("cpuscore >= 5000")
     elsif  $graphic == 'Video'
-      $result_program = Spec.where("cpuscore >= 700000")
+      $result_program = Spec.where("cpuscore >= 8000")
     elsif $graphic == '3ds'
-      $result_program = Spec.where("cpuscore >= 700000")
+      $result_program = Spec.where("cpuscore >= 8000")
     elsif $graphic == 'CAD'
-      $result_program = Spec.where("cpuscore >= 700000")
+      $result_program = Spec.where("cpuscore >= 7000")
     
     elsif $develop == 'Ordinary'
-      $result_program = Spec.where("cpuscore >= 300000")
+      $result_program = Spec.where("cpuscore >= 5000")
     elsif  $develop == 'MachineLearning'
-      $result_program = Spec.where("cpuscore >= 600000")
+      $result_program = Spec.where("cpuscore >= 8000")
     end
     $result = $result_program
   end
@@ -64,13 +87,13 @@ class HomeController < ApplicationController
     $storage = params[:storage]
     
     if $storage == '128GB'
-      $result_storage = $result_program.where("ssd >= 128")
+      $result_storage = $result_program.where("ssd <= 200  OR  hdd < 1000")
     elsif $storage == '256GB'
-      $result_storage = $result_program.where("ssd >= 256")
+      $result_storage = $result_program.where("ssd >= 200 AND ssd < 500")
     elsif $storage == '512GB'
-      $result_storage = $result_program.where("ssd >= 512")
+      $result_storage = $result_program.where("ssd >= 500 AND ssd < 1000")
     elsif $storage == '1TB'
-      $result_storage = $result_program.where("ssd >= 10000")
+      $result_storage = $result_program.where("ssd >= 1000  OR  hdd >=1000")
     end
     $result = $result_storage
     
@@ -83,13 +106,13 @@ class HomeController < ApplicationController
     $battery = params[:battery]
     
     if $battery == 'battery_1'
-      $result_battery = $result_storage.where("battery >= 1")
+      $result_battery = $result_storage.where("battery < 48")
     elsif $battery == 'battery_2'
-      $result_battery = $result_storage.where("battery >= 3")
+      $result_battery = $result_storage.where("battery >= 48 AND battery < 64")
     elsif $battery == 'battery_3'
-      $result_battery = $result_storage.where("battery >= 5")
+      $result_battery = $result_storage.where("battery >= 64 AND battery < 80")
     elsif $battery == 'battery_4'
-      $result_battery = $result_storage.where("battery >= 7")
+      $result_battery = $result_storage.where("battery >= 80")
     end
     $result = $result_battery
     
@@ -102,11 +125,11 @@ class HomeController < ApplicationController
       $display = params[:display]
     
     if $display == '13inch'
-      $result_display = $result_battery.where("display >= 13 AND display < 15")
+      $result_display = $result_battery.where("display < 14.5")
     elsif $display == '15inch'
-      $result_display = $result_battery.where("display >= 15 AND display < 17")
+      $result_display = $result_battery.where("display >= 14.5 AND display < 16.5")
     elsif $display == '17inch'
-      $result_display = $result_battery.where("display >= 17")
+      $result_display = $result_battery.where("display >= 16.5")
     end
     
     $result = $result_display
@@ -136,11 +159,12 @@ class HomeController < ApplicationController
     $brand = params[:brand]
     
     if $brand == 'samsung'
-      $result_brand = $result_weight.where("brand = samsung")
+      $result_brand = $result_weight.where("brand = 삼성전자")
     elsif $brand == 'LG'
-      $result_brand = $result_weight.where("brand = LG")
+      $result_brand = $result_weight.where("brand = LG전자")
     elsif $brand == 'etc'
       $result_brand = $result_weight.where("brand = etc")
+      # 제외 명령어
     elsif $brand == 'dontcare'
       $result_brand = $result_weight
     end
