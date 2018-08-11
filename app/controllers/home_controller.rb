@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
   end
+
   
   def upload
     a = Roo::Excelx.new(Rails.root.join('app', 'assets', 'LaptopDB.xlsx'))
@@ -25,10 +26,12 @@ class HomeController < ApplicationController
     redirect_to '/'
   end
 
+
   def program
   end
-
+ 
   def game
+
     $program = params[:program]
     
     if params[:program] == 'Document'
@@ -38,6 +41,7 @@ class HomeController < ApplicationController
     elsif params[:program] == 'Develop'
       redirect_to '/home/develop'
     end
+
   end
 
   
@@ -179,4 +183,5 @@ class HomeController < ApplicationController
   
   def back
   end
+  
 end
