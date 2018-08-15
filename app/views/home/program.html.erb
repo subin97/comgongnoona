@@ -1,22 +1,54 @@
-
-<header class="masthead">
-    <div class="container h-100">
-        <div class="row h-100">
-            <form action="/home/game" method="get">
-                <fieldset>
-                    <br><br>
-                    <h1>Home#program</h1>
-
-                    <h3>어떤 프로그램 써?</h3>
-                    <input type="radio" name="program" value="Document">문서작업
-                    <input type="radio" name="program" value="Game">게임
-                    <input type="radio" name="program" value="Graphic">그래픽작업
-                    <input type="radio" name="program" value="Develop">개발자
-                    <button type="submit">다음</button>
-                </fieldset>
-            </form>
-        </div>
-    </div>
-</header>
-
-
+<!DOCTYPE html>
+<html lang="en">
+    
+<html>
+    <head>
+        
+    </head>
+    
+    <body id="page-top">
+        <header class="masthead">
+            <div class="container h-100">
+                <div class="row h-100">
+                    
+                    <form action="/home/game" method="get">
+                        <!--<fieldset>-->
+                        <!--    <h1>Home#program</h1>-->
+        
+                            <!--<h3>어떤 프로그램 써?</h3>-->
+                        <!--    <img src="/img/icons/program_document.png" height=200px >문서작업<input type="radio" name="program" value="Document"></img>-->
+                        <!--    <img src="/img/icons/program_game.png" height=200px >게임<input type="radio" name="program" value="Game"></img>-->
+                        <!--    <img src="/img/icons/program_graphic.png" height=200px >그래픽작업<input type="radio" name="program" value="Graphic"></img>-->
+                        <!--    <img src="/img/icons/program_develop.png" height=200px >개발자<input type="radio" name="program" value="Develop"></img>-->
+                        <!--    <button type="submit">다음</button>-->
+                        <!--</fieldset>-->
+                        
+                        <div class="col-lg-12 question">
+                            <h2>어떤 프로그램 써?</h2>    
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6 text-center mb-4">
+                              <button type="radio" class="btn btn-link" name="program" value="Document"><img class="icon" src="/img/icons/program_document.png" height=200px ></button>
+                              <br><h3>문서작업</h3>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 text-center mb-4">
+                              <button type="radio" class="btn btn-link" name="program" value="Game"><img class="icon" src="/img/icons/program_game.png" height=200px ></button>
+                              <br><h3>게임</h3>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 text-center mb-4">
+                              <button type="radio" class="btn btn-link" name="program" value="Graphic"><img class="icon" src="/img/icons/program_graphic.png" height=200px ></button>
+                              <br><h3>그래픽작업</h3>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 text-center mb-4">
+                              <button type="radio" class="btn btn-link" name="program" value="Develop"><img class="icon" src="/img/icons/program_develop.png" height=200px ></button>
+                              <br><h3>개발자</h3>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </header>
+    </body>
+</html>

@@ -2,16 +2,37 @@
     <div class="container h-100">
         <div class="row h-100">
             <form action="/home/result" method="get">
-                <br><br>
-                <h1>Home#brand</h1>
-                <fieldset>
-                    <h3>브랜드 따로 원하는거 있어?</h3>
-                        <input type="radio" name="brand" value="samsung">삼성
-                        <input type="radio" name="brand" value="LG">LG
-                        <input type="radio" name="brand" value="etc">Lenova/ASUS/HP/한성/etc.
-                        <input type="radio" name="brand" value="dontcare">상관ㄴㄴ
-                    <button type="submit">다음</button>
-                </fieldset>
+                <!--<h1>Home#brand</h1>-->
+                <!--<fieldset>-->
+                <!--    <h3>브랜드 따로 원하는거 있어?</h3>-->
+                <!--        <input type="radio" name="brand" value="samsung">삼성-->
+                <!--        <input type="radio" name="brand" value="LG">LG-->
+                <!--        <input type="radio" name="brand" value="etc">Lenova/ASUS/HP/한성/etc.-->
+                <!--        <input type="radio" name="brand" value="dontcare">상관ㄴㄴ-->
+                <!--    <button type="submit">다음</button>-->
+                <!--</fieldset>-->
+                <div class="col-lg-12 question">
+                    <h2>브랜드 원하는거 있어?</h2>    
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 text-center mb-4">
+                      <button type="radio" class="btn btn-link" name="brand" value="samsung"><img class="icon" src="/img/icons/brand_samsung.png" height=200px ></button>
+                      <br><h3>삼성</h3>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 text-center mb-4">
+                      <button type="radio" class="btn btn-link" name="brand" value="LG"><img class="icon" src="/img/icons/brand_LG.png" height=200px ></button>
+                      <br><h3>LG</h3>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 text-center mb-4">
+                      <button type="radio" class="btn btn-link" name="brand" value="etc"><img class="icon" src="/img/icons/brand_etc.png" height=200px ></button>
+                      <br><h3>기타</h3>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 text-center mb-4">
+                      <button type="radio" class="btn btn-link" name="brand" value="dontcare"><img class="icon" src="/img/icons/brand_dontcare.png" height=200px ></button>
+                      <br><h3>상관ㄴㄴ</h3>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
