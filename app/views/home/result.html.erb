@@ -6,15 +6,15 @@
             <h1>Home#result</h1>
             <h3>이제부턴 개취야.</h3>
             
-            <p> program: <%=$program%> </p>
-            <p> game: <%=$game%> </p>
-            <p> graphic: <%=$graphic%> </p>
-            <p> develop: <%=$develop%> </p>
-            <p> storage: <%=$storage%> </p>
-            <p> battery: <%=$battery%> </p>
-            <p> display: <%=$display%> </p>
-            <p> weight: <%=$weight%> </p>
-            <p> brand: <%=$brand%> </p>
+            <p> program: <%=@result_program%> </p>
+            <p> game: <%=@result_game%> </p>
+            <p> graphic: <%=@result_graphic%> </p>
+            <p> develop: <%=@result_develop%> </p>
+            <p> storage: <%=@result_storage%> </p>
+            <p> battery: <%=@result_battery%> </p>
+            <p> display: <%=@result_display%> </p>
+            <p> weight: <%=@result_weight%> </p>
+            <p> brand: <%=@brand%> </p>
             <table>
               <td>
                 <tr>
@@ -35,8 +35,8 @@
                 </tr>
               </thead>
               <tbody>
-                <%= $result.empty? %>
-                  <% $result.each do |d| %>
+                <%= @result.empty? %>
+                  <% @result.each do |d| %>
                     <tr>
                       <th scope="row"><%= d.id %></th>
                       <td><%= d.brand %></td>

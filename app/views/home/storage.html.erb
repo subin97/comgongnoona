@@ -11,11 +11,16 @@
                         <input type="radio" name="storage" value="256GB">256GB
                         <input type="radio" name="storage" value="512GB">512GB
                         <input type="radio" name="storage" value="1TB">1TB
+                        <input type="hidden" name="result_program" value="<%= @result_program %>"></input>
+            
                     <button type="submit">다음</button>
-                    
-                    
+                    <p><%= @program %></p>
+                    <p><%= @game %></p>
+                    <p><%= @graphic %></p>
+                    <p><%= @develop %></p>
                 </fieldset>
             </form>
         </div>
+ 
     </div>
 </header>

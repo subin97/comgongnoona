@@ -6,12 +6,20 @@
                 <h1>Home#weight</h1>
                 <fieldset>
                     <h3>어깨는 튼튼해?</h3>
-        <input type="radio" name="weight" value="weight_low">~1Kg
-        <input type="radio" name="weight" value="weight_middle">1~2Kg
-        <input type="radio" name="weight" value="weight_high">2Kg~
+                        <input type="radio" name="weight" value="weight_low">~1Kg
+                        <input type="radio" name="weight" value="weight_middle">1~2Kg
+                        <input type="radio" name="weight" value="weight_high">2Kg~
+                        <input type="hidden" name="result_program" value="<%= @result_program %>">
+                        <input type="hidden" name="result_storage" value="<%= @result_storage %>">
+                        <input type="hidden" name="result_battery" value="<%= @result_battery %>">
+                        <input type="hidden" name="result_display" value="<%= @result_display %>">
                     <button type="submit">다음</button>
                 </fieldset>
             </form>
+            <%= @result_program %>
+            <%= @result_storage %>
+            <%= @result_battery %>
+            <%= @result_display %>
         </div>
     </div>
 </header>

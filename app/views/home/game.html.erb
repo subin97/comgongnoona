@@ -2,6 +2,7 @@
 <header class="masthead">
     <div class="container h-100">
         <div class="row h-100">
+            <%= @program %>
             <form action="/home/storage" method="get">
                 <br><br>
                 <h1>Home#game</h1>
@@ -11,10 +12,13 @@
                     <input type="radio" name="game" value="LOL">리그 오브 레전드
                     <input type="radio" name="game" value="Overwatch">오버워치
                     <input type="radio" name="game" value="PUBG">배틀 그라운드
+                    <input type="hidden" name="program1" value="<%= @program1 %>"></input>
+                    <input type="hidden" name="program2" value="<%= @program2 %>"></input>
                     <button type="submit">다음</button>
                     
                 </fieldset>
             </form>
+
         </div>
     </div>
 </header>

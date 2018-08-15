@@ -9,9 +9,16 @@
                         <input type="radio" name="display" value="13inch">13인치
                         <input type="radio" name="display" value="15inch">15인치
                         <input type="radio" name="display" value="17inch">17인치
+                        <input type="hidden" name="result_program" value="<%= @result_program %>">
+                        <input type="hidden" name="result_storage" value="<%= @result_storage %>">
+                        <input type="hidden" name="result_battery" value="<%= @result_battery %>">
                     <button type="submit">다음</button>
                 </fieldset>
             </form>
+            <%= @result_program %>
+            <%= @result_storage %>
+            <%= @result_battery %>
         </div>
+
     </div>
 </header>

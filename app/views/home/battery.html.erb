@@ -11,9 +11,14 @@
                         <input type="radio" name="battery" value="battery_2">~10시간
                         <input type="radio" name="battery" value="battery_3">~24시간
                         <input type="radio" name="battery" value="battery_4">24시간~
+                        <input type="hidden" name="result_program" value="<%= @result_program %>"></input>
+                        <input type="hidden" name="result_storage" value="<%= @result_storage %>"></input>
+
                     <button type="submit">다음</button>
                 </fieldset>
             </form>
+            <%= @result_program %>
+            <%= @result_storage %>
         </div>
     </div>
 </header>

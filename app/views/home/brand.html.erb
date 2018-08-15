@@ -10,9 +10,19 @@
                         <input type="radio" name="brand" value="LG">LG
                         <input type="radio" name="brand" value="etc">Lenova/ASUS/HP/한성/etc.
                         <input type="radio" name="brand" value="dontcare">상관ㄴㄴ
+                        <input type="hidden" name="result_program" value="<%= @result_program %>">
+                        <input type="hidden" name="result_storage" value="<%= @result_storage %>">
+                        <input type="hidden" name="result_battery" value="<%= @result_battery %>">
+                        <input type="hidden" name="result_display" value="<%= @result_display %>">
+                        <input type="hidden" name="result_weight" value="<%= @result_weight %>">
                     <button type="submit">다음</button>
                 </fieldset>
             </form>
+            <%= @result_program %>
+            <%= @result_storage %>
+            <%= @result_battery %>
+            <%= @result_display %>
+            <%= @result_weight %>
         </div>
     </div>
 </header>

@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
   root 'home#index'
-
+  
   get 'home/program'
 
-  get 'home/game'
+  get 'home/action1'
 
+  get 'home/game'
+  
   get 'home/graphic'
 
   get 'home/develop'
 
+  get 'home/portability'
+  
   get 'home/storage'
 
   get 'home/battery'
