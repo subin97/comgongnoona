@@ -113,6 +113,7 @@ section h2 {
   #mainNav {
     border-color: transparent;
     background-color: transparent;
+    margin-bottom: 100px;
   }
   #mainNav .navbar-brand {
     color: fade(white, 70%);
@@ -129,7 +130,7 @@ section h2 {
     color: white;
   }
   #mainNav.navbar-shrink {
-    border-color: rgba(34, 34, 34, 0.1);
+    border-color: rgba(34, 34, 34, 0.1) !important;
     background-color: white;
   }
   #mainNav.navbar-shrink .navbar-brand {
@@ -154,9 +155,11 @@ header.masthead {
   padding-top: 150px;
   padding-bottom: 100px;
   color: white;
-  background: url("../img/bg-pattern.png"), #7b4397;
-  background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
-  background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+  /*background: url("../img/bg-pattern.png"), #7b4397;*/
+  /*background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);*/
+  /*background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);*/
+  background: linear-gradient(to left, #56c0eb, #ff7495);
+
 }
 
 header.masthead .header-content {
@@ -434,4 +437,30 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 .btn-xl {
   font-size: 11px;
   padding: 15px 45px;
+}
+
+
+/*가운데 정렬 추가*/
+.row.index {
+ padding-top: 20%;
+}
+.row {
+  text-align: center;
+  padding-top: 10%;
+}
+
+.row.h-100 {
+  padding-top: 10%; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

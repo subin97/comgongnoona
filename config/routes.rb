@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   get 'home/back'
   
   get 'home/upload'
+  
+  get 'home/portability'
 
   get 'home/word'
   # The priority is based upon order of creation: first created -> highest priority.

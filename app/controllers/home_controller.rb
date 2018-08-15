@@ -21,6 +21,7 @@ class HomeController < ApplicationController
             display: a.cell(i,'M'), 
             weight: a.cell(i,'N')
           )
+            
     end
     redirect_to '/'
   end
@@ -110,6 +111,21 @@ class HomeController < ApplicationController
   #   @result = Spec.where(@result_storage).where(@result_program)
     
   #   if @result.empty?
+  # def display
+  #   $battery = params[:battery]
+    
+  #   if $battery == 'battery_1'
+  #     $result_battery = $result_storage.where("battery < 48")
+  #   elsif $battery == 'battery_2'
+  #     $result_battery = $result_storage.where("battery >= 48 AND battery < 64")
+  #   elsif $battery == 'battery_3'
+  #     $result_battery = $result_storage.where("battery >= 64 AND battery < 80")
+  #   elsif $battery == 'battery_4'
+  #     $result_battery = $result_storage.where("battery >= 80")
+  #   end
+  #   $result = $result_battery
+    
+  #   if $result.empty?
   #     redirect_to '/home/back'
   #   end
   # end
@@ -157,6 +173,26 @@ class HomeController < ApplicationController
   #     redirect_to '/home/back'
   #   end
   # end
+  # def weight
+  #     $display = params[:display]
+    
+  #   if $display == '13inch'
+  #     $result_display = $result_battery.where("display < 14.5")
+  #   elsif $display == '15inch'
+  #     $result_display = $result_battery.where("display >= 14.5 AND display < 16.5")
+  #   elsif $display == '17inch'
+  #     $result_display = $result_battery.where("display >= 16.5")
+  #   end
+    
+  #   $result = $result_display
+  #   if $result.empty?
+  #     redirect_to '/home/back'
+  #   end
+  # end
+  
+  def portability
+    
+  end
 
   def brand
     @result_program = params[:result_program] 
