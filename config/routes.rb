@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
   
+  get 'home/upload'
+  
   get 'home/program'
 
   get 'home/action1'
@@ -15,11 +17,11 @@ Rails.application.routes.draw do
   
   get 'home/storage'
 
-  get 'home/battery'
+  # get 'home/battery'
 
-  get 'home/display'
+  # get 'home/display'
 
-  get 'home/weight'
+  # get 'home/weight'
 
   get 'home/brand'
 
@@ -27,10 +29,8 @@ Rails.application.routes.draw do
   
   get 'home/back'
   
-  get 'home/upload'
-  
-  get 'home/portability'
 
+  
   get 'home/word'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

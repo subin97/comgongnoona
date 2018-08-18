@@ -15,6 +15,7 @@ class CreateSpecs < ActiveRecord::Migration
       t.integer :battery
       t.float :display
       t.float :weight
+      t.string :imagelink
       
       t.timestamps null: false
     end

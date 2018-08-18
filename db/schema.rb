@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180731161208) do
     t.integer  "battery"
     t.float    "display"
     t.float    "weight"
+    t.string   "imagelink"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

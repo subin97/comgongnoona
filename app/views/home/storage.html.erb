@@ -2,7 +2,7 @@
 <header class="masthead">
     <div class="container h-100">
         <div class="row h-100">
-            <form action="/home/battery" method="get">
+            <form action="/home/brand" method="get">
                 <!--<h1>Home#storage</h1>-->
                 <!--<fieldset>-->
                 <!--    <h3>용량 얼마나 필요해?</h3>-->
@@ -18,18 +18,20 @@
                 
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 text-center mb-4">
-                      <button type="radio" class="btn btn-link" name="storage" value="128GB"><img class="icon" src="/img/icons/storage.png" height=200px ></button>
+                      <button type="radio" class="btn btn-link" name="storage" value="ssd_low"><img class="icon" src="/img/icons/storage.png" height=200px ></button>
                       <br><h3>저용량</h3>
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center mb-4">
-                      <button type="radio" class="btn btn-link" name="storage" value="256GB"><img class="icon" src="/img/icons/storage.png" height=200px ></button>
+                      <button type="radio" class="btn btn-link" name="storage" value="ssd_high"><img class="icon" src="/img/icons/storage.png" height=200px ></button>
                       <br><h3>고용량</h3>
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center mb-4">
-                      <button type="radio" class="btn btn-link" name="storage" value="512GB"><img class="icon" src="/img/icons/storage.png" height=200px ></button>
+                      <button type="radio" class="btn btn-link" name="storage" value="ssd_hdd"><img class="icon" src="/img/icons/storage.png" height=200px ></button>
                       <br><h3>대용량</h3>
                     </div>
                 </div>
+                <input type="hidden" name="result_program" value="<%= @result_program %>">
+                <input type="hidden" name="result_portability" value="<%= @result_portability %>">
             </form>
         </div>
  

@@ -1,63 +1,121 @@
 <header class="masthead">
     <div class="container h-100">
         <div class="row h-100">
-            <fieldset>
-            <h1>Home#result</h1>
+            <!--<h1>Home#result</h1>-->
             <h3>이제부턴 개취야.</h3>
+            <!--카드형식 테스트-->
+            <div class="row result">
+              <% @result.each do |d| %>
+              <div class="card col-lg-3 col-sm-6 text-center mb-4">
+                <img class="card-img-top" src="<%= d.imagelink %>" alt="Card image" style="width:100%">
+                <div class="card-body">
+                  <h4 class="card-title"><%= d.brand %></h4>
+                  <p class="card-text"><%= d.name %></p>
+                  <a href="http://search.danawa.com/dsearch.php?k1=<%=d.brand%> <%= d.name %>&module=goods&act=dispMain" class="btn btn-success">다나와 검색</a>
+                   <!--스펙표-->
+                  <table class=result_table>
+                    <tbody>
+                      <tr>
+                        <th>가격</th>
+                        <td><%= d. price%>원</td>
+                      </tr>
+                      <tr>
+                        <th>CPU</th>
+                        <td><%= d. cpu%></td>
+                      </tr>
+                      <tr>
+                        <th>그래픽카드</th>
+                        <td><%= d. gpu%></td>
+                      </tr>
+                      <tr>
+                        <th>RAM</th>
+                        <td><%= d. ram%>GB</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td><%= d. ssd%>GB</td>
+                      </tr>
+                      <tr>
+                        <th>HDD</th>
+                        <td><%= d. hdd%>GB</td>
+                      </tr>
+                      <tr>
+                        <th>배터리용량</th>
+                        <td><%= d. battery%>Wh</td>
+                      </tr>
+                      <tr>
+                        <th>화면크기</th>
+                        <td><%= d. display%>인치</td>
+                      </tr>
+                      <tr>
+                        <th>무게</th>
+                        <td><%= d. weight%>Kg</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <a href="https://www.youtube.com/results?search_query=<%=d.brand%> <%= d.name %>" class="btn btn-danger">유튜브 검색</a>
+                </div>
+              </div>
+              <% end %>
+            </div>
             
+            <!--카드형식 테스트 끝-->
             <p> program: <%=@result_program%> </p>
-            <p> game: <%=@result_game%> </p>
-            <p> graphic: <%=@result_graphic%> </p>
-            <p> develop: <%=@result_develop%> </p>
+            <!--<p> game: <%=@result_game%> </p>-->
+            <!--<p> graphic: <%=@result_graphic%> </p>-->
+            <!--<p> develop: <%=@result_develop%> </p>-->
+            <p> portability: <%=@result_portability%></p>
             <p> storage: <%=@result_storage%> </p>
-            <p> battery: <%=@result_battery%> </p>
-            <p> display: <%=@result_display%> </p>
-            <p> weight: <%=@result_weight%> </p>
+            <!--<p> battery: <%=@result_battery%> </p>-->
+            <!--<p> display: <%=@result_display%> </p>-->
+            <!--<p> weight: <%=@result_weight%> </p>-->
             <p> brand: <%=@brand%> </p>
-            <table>
-              <td>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">브랜드</th>
-                  <th scope="col">모델명</th>
-                  <th scope="col">가격</th>
-                  <th scope="col">CPU이름</th>
-                  <th scope="col">CPU점수</th>
-                  <th scope="col">GPU이름</th>
-                  <th scope="col">GPU점수</th>
-                  <th scope="col">RAM</th>
-                  <th scope="col">HDD</th>
-                  <th scope="col">SSD</th>
-                  <th scope="col">배터리</th>
-                  <th scope="col">화면크기</th>
-                  <th scope="col">무게</th>
-                </tr>
-              </thead>
-              <tbody>
-                <%= @result.empty? %>
-                  <% @result.each do |d| %>
-                    <tr>
-                      <th scope="row"><%= d.id %></th>
-                      <td><%= d.brand %></td>
-                      <td><%= d. name%></td>
-                      <td><%= d. price%></td>
-                      <td><%= d. cpu%></td>
-                      <td><%= d. cpuscore%></td>
-                      <td><%= d. gpu%></td>
-                      <td><%= d. gpuscore%></td>
-                      <td><%= d. ram%></td>
-                      <td><%= d. hdd%></td>
-                      <td><%= d. ssd%></td>
-                      <td><%= d. battery%></td>
-                      <td><%= d. display%></td>
-                      <td><%= d. weight%></td>
-                      <td><a href="https://www.youtube.com/results?search_query=<%= d.name %>"><button>유튜브 검색</button></a></td>
-                      <td><a href="http://search.danawa.com/dsearch.php?k1=<%= d.name %>&module=goods&act=dispMain"><button>다나와 검색</button></a></td>
-                    </tr>
-                  <% end %>    
-              </tbody>
-            </table>
-            </fieldset>
+            
+            <!--<table>-->
+            <!--  <td>-->
+            <!--    <tr>-->
+            <!--      <th scope="col">#</th>-->
+            <!--      <th scope="col">이미지</th>-->
+            <!--      <th scope="col">브랜드</th>-->
+            <!--      <th scope="col">모델명</th>-->
+            <!--      <th scope="col">가격</th>-->
+            <!--      <th scope="col">CPU이름</th>-->
+            <!--      <th scope="col">CPU점수</th>-->
+            <!--      <th scope="col">GPU이름</th>-->
+            <!--      <th scope="col">GPU점수</th>-->
+            <!--      <th scope="col">RAM</th>-->
+            <!--      <th scope="col">HDD</th>-->
+            <!--      <th scope="col">SSD</th>-->
+            <!--      <th scope="col">배터리</th>-->
+            <!--      <th scope="col">화면크기</th>-->
+            <!--      <th scope="col">무게</th>-->
+            <!--    </tr>-->
+            <!--  </thead>-->
+            <!--  <tbody>-->
+                <!--<%= @result.empty? %>-->
+            <!--      <% @result.each do |d| %>-->
+            <!--        <tr>-->
+            <!--          <th scope="row"><%= d.id %></th>-->
+            <!--          <td><img src="<%= d.imagelink %>"></img></td>-->
+            <!--          <td><%= d.brand %></td>-->
+            <!--          <td><%= d. name%></td>-->
+            <!--          <td><%= d. price%></td>-->
+            <!--          <td><%= d. cpu%></td>-->
+            <!--          <td><%= d. cpuscore%></td>-->
+            <!--          <td><%= d. gpu%></td>-->
+            <!--          <td><%= d. gpuscore%></td>-->
+            <!--          <td><%= d. ram%></td>-->
+            <!--          <td><%= d. hdd%></td>-->
+            <!--          <td><%= d. ssd%></td>-->
+            <!--          <td><%= d. battery%></td>-->
+            <!--          <td><%= d. display%></td>-->
+            <!--          <td><%= d. weight%></td>-->
+            <!--          <td><a href="https://www.youtube.com/results?search_query=<%= d.name %>"><button>유튜브 검색</button></a></td>-->
+            <!--          <td><a href="http://search.danawa.com/dsearch.php?k1=<%= d.name %>&module=goods&act=dispMain"><button>다나와 검색</button></a></td>-->
+            <!--        </tr>-->
+            <!--      <% end %>    -->
+            <!--  </tbody>-->
+            <!--</table>-->
         </div>
     </div>
 </header>

@@ -3,23 +3,25 @@ class HomeController < ApplicationController
   end
   
   def upload
-    a = Roo::Excelx.new(Rails.root.join('app', 'assets', 'LaptopDB.xlsx'))
+    # 엑셀DB업로드
+    a = Roo::Excelx.new(Rails.root.join('app', 'assets', 'LaptopDB0816_2.xlsx'))
     a.default_sheet = a.sheets.first
     for i in 2..140
         Spec.create!(
             brand: a.cell(i,'A'), 
-            name: a.cell(i,'B'), 
-            price: a.cell(i,'C'), 
-            cpu: a.cell(i,'D'), 
-            cpuscore: a.cell(i,'E'), 
-            gpu: a.cell(i,'F'), 
-            gpuscore: a.cell(i,'H'), 
-            ram: a.cell(i,'I'), 
-            hdd: a.cell(i,'J'), 
-            ssd: a.cell(i,'K'), 
-            battery: a.cell(i,'L'), 
-            display: a.cell(i,'M'), 
-            weight: a.cell(i,'N')
+            name: a.cell(i,'C'), 
+            price: a.cell(i,'D'), 
+            cpu: a.cell(i,'E'), 
+            cpuscore: a.cell(i,'F'), 
+            gpu: a.cell(i,'G'), 
+            gpuscore: a.cell(i,'I'), 
+            ram: a.cell(i,'J'), 
+            hdd: a.cell(i,'K'), 
+            ssd: a.cell(i,'L'), 
+            battery: a.cell(i,'M'), 
+            display: a.cell(i,'N'), 
+            weight: a.cell(i,'O'),
+            imagelink: a.cell(i,'Q')
           )
             
     end
@@ -55,44 +57,62 @@ class HomeController < ApplicationController
   def develop
     @program = 'Develop'
   end
+  
   def portability
     @game = params[:game]
     @graphic = params[:graphic]
     @develop = params[:develop]
     
-    @result_program = "cpuscore>60"
-    if @program == 'Document'
-      @result_program = "cpuscore <= 4000"
-    
-    elsif @game == 'Maplestory'
-      @result_program = "cpuscore > 4000 AND cpuscore <=6000"
+    # 문서작업 필터링
+    @result_program = "cpuscore<=5000"
+    # if @program == 'Document'
+      # @result_program = "cpuscore <= 5000"
+      
+    # 게임 필터링
+    if @game == 'Maplestory'
+      @result_program = "gpuscore >= 700 AND ram >=4"
     elsif  @game == 'LOL'
-      @result_program = "cpuscore > 6000 AND cpuscore <=8000"
+      @result_program = "gpuscore >= 1000 AND ram >=4"
     elsif @game == 'Overwatch'
-      @result_program = "cpuscore > 8000 AND cpuscore <= 10000"
+      @result_program = "cpuscore >= 4000 AND gpuscore >= 4000 AND ram >=6"
     elsif @game == 'PUBG'
-      @result_program = "cpuscore > 10000"
-    
+      @result_program = "cpuscore >= 7500 AND gpuscore >= 8000 AND ram >=16"
+      
+    # 그래픽작업 필터링
     elsif @graphic == 'Photo'
-      @result_program = "cpuscore >= 5000"
+      @result_program = "cpuscore >= 4000 AND ram >=8"
     elsif  @graphic == 'Video'
-      @result_program = "cpuscore >= 8000"
+      @result_program = "cpuscore >= 7000 AND gpuscore >= 2000 AND ram >=16"
     elsif @graphic == '3ds'
-      @result_program = "cpuscore >= 8000"
+      @result_program = "cpuscore >= 5000 AND ram >= 8"
     elsif @graphic == 'CAD'
-      @result_program = "cpuscore >= 7000"
-    
+      @result_program = "cpuscore >= 4000 AND ram >= 8"
+      
+    # 개발 필터링
     elsif @develop == 'Ordinary'
-      @result_program = "cpuscore >= 5000"
+      @result_program = "cpuscore >= 4000 AND ram >=4"
     elsif  @develop == 'MachineLearning'
-      @result_program = "cpuscore >= 8000"
+      @result_program = "cpuscore >= 7000 AND gpuscore >= 6000 AND ram >=16"
+      # 지포스 그래픽카드만 필터링으로 
     end
   end
   
   def storage
-    # 휴대성  
     @result_program = params[:result_program]
     @portability = params[:portability]
+    #휴대성 필터링
+    if @portability == 'portable'
+      @result_portability = "display<=15 AND weight <=1.5"
+    elsif @portability == 'HQportable'
+      @result_portability = "display<=15 AND weight<=2.5"
+    elsif @portability == 'HQonly'
+      @result_portability = "display>=15 AND weight>2"
+    end
+    @result = Spec.where(@result_program).where(@result_portability)
+
+    if @result.empty?
+      redirect_to '/home/back'
+    end
   end
 
   # def battery
@@ -189,27 +209,20 @@ class HomeController < ApplicationController
   #     redirect_to '/home/back'
   #   end
   # end
-  
-  def portability
-    
-  end
 
   def brand
     @result_program = params[:result_program] 
     @result_portability = params[:result_portability]
     @storage = params[:storage]
-    
-    if @storage == '128GB'
-      @result_storage = "ssd <= 200  OR  hdd < 1000"
-    elsif @storage == '256GB'
-      @result_storage = "ssd >= 200 AND ssd < 500"
-    elsif @storage == '512GB'
-      @result_storage = "ssd >= 500 AND ssd < 1000"
-    elsif @storage == '1TB'
-      @result_storage = "ssd >= 1000  OR  hdd >=1000"
+    # 용량 필터링
+    if @storage == 'ssd_low'
+      @result_storage = "ssd < 500 AND hdd <1"
+    elsif @storage == 'ssd_high'
+      @result_storage = "ssd >= 500 AND hdd <1"
+    elsif @storage == 'ssd_hdd'
+      @result_storage = "ssd >0 AND hdd >0"
     end
     @result = Spec.where(@result_program).where(@result_portability).where(@result_storage)
-    
 
     if @result.empty?
       redirect_to '/home/back'
@@ -221,7 +234,7 @@ class HomeController < ApplicationController
     @result_storage = params[:result_storage]
     @result_program = params[:result_program] 
     @result_portability = params[:result_portability]
-
+    # 브랜드 필터링
     if @brand == 'samsung'
       @result_brand = Spec.where(@result_portability).where(@result_storage).where(@result_program).where(["brand = '%s'", "삼성전자"])
     elsif @brand == 'LG'

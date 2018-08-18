@@ -5,7 +5,7 @@ body {
 }
 
 body {
-  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: 'Binggrae', 'Muli', 'Helvetica', 'Arial', 'sans-serif';
 }
 
 a {
@@ -36,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: 'Binggrae', 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
 }
@@ -184,7 +184,7 @@ header.masthead .device-container .screen img {
 
 @media (min-width: 992px) {
   header.masthead {
-    height: 100vh;
+    /*height: 100vh;*/
     min-height: 775px;
     padding-top: 0;
     padding-bottom: 0;
@@ -194,7 +194,7 @@ header.masthead .device-container .screen img {
     text-align: left;
   }
   header.masthead .header-content h1 {
-    font-size: 50px;
+    font-size: 70px;
   }
   header.masthead .device-container {
     max-width: 325px;
@@ -416,18 +416,19 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .btn-outline {
-  color: white;
+  color: black;
   border: 1px solid;
-  border-color: white;
+  border-color: black;
 }
 
 .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
-  color: white;
+  color: black;
   border-color: #fdcc52;
   background-color: #fdcc52;
 }
 
 .btn {
+  color: black;
   border-radius: 300px;
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
   letter-spacing: 2px;
@@ -435,10 +436,13 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .btn-xl {
-  font-size: 11px;
+  font-size: 15px;
   padding: 15px 45px;
 }
 
+.btn.btn-success, .btn.btn-danger {
+  color: white;
+}
 
 /*가운데 정렬 추가*/
 .row.index {
@@ -447,6 +451,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 .row {
   text-align: center;
   padding-top: 10%;
+  color: black;
 }
 
 .row.h-100 {
@@ -464,3 +469,20 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   margin-right: auto;
   width: 50%;
 }
+
+/*결과 창 수정*/
+.container.result {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  color: black;
+}
+
+.result_table {
+  text-align: left;
+}
+
+
+@font-face { font-family: 'Binggrae'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff'); font-weight: normal; font-style: normal; }
