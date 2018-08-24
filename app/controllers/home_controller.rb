@@ -251,7 +251,28 @@ class HomeController < ApplicationController
       redirect_to '/home/back'
     end
     
+    # 평균
+    @count = 0
+    @result.each do |r|
+      @count += 1
+    end
+    
+    # # 금은동
+    # @result.each do |r|
+    #   if r.cpuscore<avgcpu-10000
+    #     @cpumedal = 1   # 동
+    #   elsif r.cpuscore>avgcpu-10000 and r.cpuscore<avgcpu+10000
+    #     @cpumedal = 2   # 은
+    #   else
+    #     @cpumedal = 3   # 금
+    #   end
+    # end
+    
+    # 정렬 가격순
+    @top4 = @result.order(:price).first(4)
+    @others = @result.order(:price).offset(4)
   end
+  
   
   def back
   end

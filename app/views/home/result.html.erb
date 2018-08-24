@@ -1,11 +1,15 @@
+<head>
+  
+</head>
 <header class="masthead">
     <div class="container h-100">
         <div class="row h-100">
-            <!--<h1>Home#result</h1>-->
+
             <h3>이제부턴 개취야.</h3>
+           
             <!--카드형식 테스트-->
             <div class="row result">
-              <% @result.each do |d| %>
+              <% @top4.each do |d| %>
               <div class="card col-lg-3 col-sm-6 text-center mb-4">
                 <img class="card-img-top" src="<%= d.imagelink %>" alt="Card image" style="width:100%">
                 <div class="card-body">
@@ -58,6 +62,71 @@
               </div>
               <% end %>
             </div>
+            
+            <% if @count > 4 %>
+              <!--더보기 버튼 -->
+              
+              <!--더보기 내용-->
+            <div class="row result">
+              <% @others.each do |d| %>
+              <div class="card col-lg-3 col-sm-6 text-center mb-4">
+                <img class="card-img-top" src="<%= d.imagelink %>" alt="Card image" style="width:100%">
+                <div class="card-body">
+                  <h4 class="card-title"><%= d.brand %></h4>
+                  <p class="card-text"><%= d.name %></p>
+                  <a href="http://search.danawa.com/dsearch.php?k1=<%=d.brand%> <%= d.name %>&module=goods&act=dispMain" class="btn btn-success">다나와 검색</a>
+                   <!--스펙표-->
+                  <table class=result_table>
+                    <tbody>
+                      <tr>
+                        <th>가격</th>
+                        <td><%= d. price%>원</td>
+                      </tr>
+                      <tr>
+                        <th>CPU</th>
+                        <td><%= d. cpu%></td>
+                      </tr>
+                      <tr>
+                        <th>그래픽카드</th>
+                        <td><%= d. gpu%></td>
+                      </tr>
+                      <tr>
+                        <th>RAM</th>
+                        <td><%= d. ram%>GB</td>
+                      </tr>
+                      <tr>
+                        <th>SSD</th>
+                        <td><%= d. ssd%>GB</td>
+                      </tr>
+                      <tr>
+                        <th>HDD</th>
+                        <td><%= d. hdd%>GB</td>
+                      </tr>
+                      <tr>
+                        <th>배터리용량</th>
+                        <td><%= d. battery%>Wh</td>
+                      </tr>
+                      <tr>
+                        <th>화면크기</th>
+                        <td><%= d. display%>인치</td>
+                      </tr>
+                      <tr>
+                        <th>무게</th>
+                        <td><%= d. weight%>Kg</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <a href="https://www.youtube.com/results?search_query=<%=d.brand%> <%= d.name %>" class="btn btn-danger">유튜브 검색</a>
+                </div>
+              </div>
+              <% end %>
+            </div>
+            
+            <% end %>
+            <!--<%# @top4.each do |t| %>-->
+            <!--  <p><#%= t.name %></p>-->
+            <!--  <p><#%= t.price %></p>-->
+            <!--<%# end %>-->
             
             <!--카드형식 테스트 끝-->
             <p> program: <%=@result_program%> </p>
