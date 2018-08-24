@@ -104,9 +104,9 @@ class HomeController < ApplicationController
     if @portability == 'portable'
       @result_portability = "display<=15 AND weight <=1.5"
     elsif @portability == 'HQportable'
-      @result_portability = "display<=15 AND weight<=2.5"
+      @result_portability = "display<=15 AND weight<2.3"
     elsif @portability == 'HQonly'
-      @result_portability = "display>=15 AND weight>2"
+      @result_portability = "display>=15 AND weight>=2.3"
     end
     @result = Spec.where(@result_program).where(@result_portability)
 
